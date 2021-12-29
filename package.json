@@ -4,6 +4,7 @@
   "description": "A simple TS package used for hashed password generation and verification",
   "main": "lib",
   "license": "MIT",
+  "author": "sonalan",
   "repository": {
     "type": "git",
     "url": "https://github.com/sonalan/hashed-password.git"
