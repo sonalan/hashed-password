@@ -44,3 +44,31 @@ export const hashPassword = (
 
   return { hash, salt };
 };
+
+interface passwordOptions {
+  numbers?: boolean;
+  symbols?: boolean;
+}
+
+/**
+ * Returns a random password based on given params
+ * @param {number} length
+ * @param {passwordOptions} options
+ * @returns {string}
+ */
+export const randomPassword = (length=10, options?: passwordOptions): string => {
+  const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*_-+=";
+
+  let characters = alpha;
+  characters += options?.numbers ? numbers : "";
+  characters += options?.symbols ? symbols : "";
+  let password = "";
+  for (let i = 0; i < length; i += 1) {
+    password += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+  }
+  return password;
+};

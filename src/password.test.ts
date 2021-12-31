@@ -1,4 +1,4 @@
-import { hashPassword, validatePassword } from "./password";
+import { hashPassword, validatePassword, randomPassword } from "./password";
 
 const PASSWORD = "1234";
 
@@ -32,5 +32,18 @@ describe("validatePassword", () => {
     expect(validatePassword(VALUES.wrongString, VALUES.salt, VALUES.hash)).toBe(
       false
     );
+  });
+});
+
+describe("randomPassword", () => {
+  test("without options", () => {
+    const password = randomPassword();
+    expect(password.length).toEqual(10);
+  });
+
+  test("with length param", () => {
+    const length = 15;
+    const password = randomPassword(length);
+    expect(password.length).toEqual(length);
   });
 });
