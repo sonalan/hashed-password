@@ -9,11 +9,13 @@ yarn add hashed-password
 
 ## Ussage
 ```javascript 
-import { validatePassword, hashPassword } from "hashed-password"
+import { validatePassword, hashPassword, randomPassword } from "hashed-password"
 
 const {hash, salt} = hashPassword("YOUR PASSWORD");
 
 const isValid = validatePassword("YOUR PASSWORD", salt, hash); 
+
+const securePass = randomPassword(10,{numbers: false, symbols: false})
  
 ``` 
  
@@ -26,6 +28,9 @@ Does the given password mathc with the hash</p>
 </dd>
 <dt><a href="#hashPassword">hashPassword(password)</a> ⇒ <code><a href="#HashAndSalt">HashAndSalt</a></code></dt>
 <dd><p>Given a Password and hash it with a salt, then return the hash and the salt</p>
+</dd>
+<dt><a href="#randomPassword">randomPassword(length, options)</a> ⇒ <code>string</code></dt>
+<dd><p>Returns a random password based on given params</p>
 </dd>
 </dl>
 
@@ -62,6 +67,18 @@ Given a Password and hash it with a salt, then return the hash and the salt
 | Param | Type |
 | --- | --- |
 | password | <code>string</code> | 
+
+<a name="randomPassword"></a>
+
+## randomPassword(length, options) ⇒ <code>string</code>
+Returns a random password based on given params
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| length | <code>number</code> | 
+| options | <code>passwordOptions</code> | 
 
 <a name="HashAndSalt"></a>
 

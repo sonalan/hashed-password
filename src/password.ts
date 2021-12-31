@@ -56,7 +56,10 @@ interface passwordOptions {
  * @param {passwordOptions} options
  * @returns {string}
  */
-export const randomPassword = (length=10, options?: passwordOptions): string => {
+export const randomPassword = (
+  length: number = 10,
+  options?: passwordOptions
+): string => {
   const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numbers = "0123456789";
   const symbols = "!@#$%^&*_-+=";
