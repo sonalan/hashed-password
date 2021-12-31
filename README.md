@@ -18,6 +18,11 @@ const isValid = validatePassword("YOUR PASSWORD", salt, hash);
 const securePass = randomPassword(10,{numbers: false, symbols: false})
  
 ``` 
+## Demo
+
+Demo : <a href="https://9f9yo.csb.app/">Demo Url</a>
+
+React Sample: <a href="https://codesandbox.io/s/magical-cookies-9f9yo?">Code Sandbox</a>
  
 ## Functions
 
